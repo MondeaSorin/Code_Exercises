@@ -1,0 +1,5 @@
+Fi?ierul date.in con?ine pe prima linie dou? numere naturale din intervalul [1,106], m ?i n, iar pe urm?toarele dou? linii numere naturale din intervalul [0,102):
+pe a doua linie un ?ir A, de m numere, iar pe a treia linie un ?ir B, de n numere. Numerele aflate pe aceea?i linie sunt separate prin câte un spa?iu. Se cere s? se afi?eze pe ecran num?rul 
+maxim de perechi de forma (pa,pb) (pa?[1,m], pb?[1,n]), cu proprietatea c? termenul de pe pozi?ia pa din ?irul A are aceea?i valoare cu termenul de pe pozi?ia pb din ?irul B ?i c? fiecare 
+pozi?ie, corespunz?toare ?irului A, respectiv ?irului B, apare în cel  mult o pereche, ca în exemplu. Proiecta?i un algoritm eficient din punctul de vedere al timpului de executare. 
+Exemplu: dac? fi?ierul con?ine numerele al?turate, se afi?eaz? pe ecran

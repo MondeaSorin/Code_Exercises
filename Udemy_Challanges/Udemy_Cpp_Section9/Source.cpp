@@ -75,6 +75,8 @@ void print_menu()
     cout << "M - Display mean of the numbers" << endl;
     cout << "S - Display the smallest number" << endl;
     cout << "L - Display the largest number" << endl;
+    cout << "C - Clear vector" << endl;
+    cout << "F - Find a number" << endl;
     cout << "Q - Quit" << endl << endl;
 }
 
@@ -98,7 +100,11 @@ void add_number(vector<int>& vec)
 {
     int number{};
     cout << "Number to add: "; cin >> number;
-    vec.push_back(number);
+    const auto it = find(vec.begin(), vec.end(), number);
+    if (it == vec.end())
+    {
+        vec.push_back(number);
+    }
 }
 
 double mean(vector<int>& vec)
@@ -161,6 +167,35 @@ void largest_number(const vector<int>& vec)
     cout << "The largest element is: " << largest << endl;
 }
 
+void find_number(const vector<int>& vec)
+{
+    int number{};
+    cout << "Enter the number you wish to find: "; cin >> number;
+
+    // Method 1: without std::find
+
+    //for (size_t i = 0; i < vec.size(); ++i)
+    //{
+    //    if (vec.at(i) == number)
+    //    {
+    //        cout << "Number found! It's index is: " << i << endl;
+    //        return;
+    //    }
+    //}
+
+
+    // Method 2: using std::find
+    const auto it = find(vec.begin(), vec.end(), number);
+    if (it != vec.end())
+    {
+        cout << "Number found! It's index is: " << distance(vec.begin(), it) << endl;
+        return;
+    }
+
+    //
+    cout << "Number doesn't exist inside the vector" << endl;
+}
+
 int main()
 {
 #pragma region Variables
@@ -190,6 +225,12 @@ int main()
             break;
         case 'L':
             largest_number(vec);
+            break;
+        case 'C':
+            vec.clear();
+            break;
+        case 'F':
+            find_number(vec);
             break;
         case 'Q':
             cout << "Goodbye!" << endl;

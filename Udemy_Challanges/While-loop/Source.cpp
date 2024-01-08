@@ -19,11 +19,12 @@ int count_numbers(const vector<int>& vec)
 	//vector<int>::const_iterator it = find(vec.begin(), vec.end(), 2);
 	//cout << *it;
 
-	cout << ((vec.at(index) != stop_value) && (index < vec.size())) << endl;
+	//cout << ((vec.at(index++) != stop_value) && (index < vec.size())) << endl;
 
 	// De intrebat pe denis a && b != b && a  ???!??!?
-	while (vec.at(index++) != stop_value && index < vec.size())
+	while (vec.at(index) != stop_value && index < vec.size()) //  
 	{
+		++index;
 		++count;
 	}
 
@@ -48,9 +49,13 @@ int count_numbers2(const vector<int>& vec)
 
 int main()
 {
-	vector<int> v{ 1,2,3,-99,4,5 };
+	vector<int> v{ 1 };
 
 	auto element = v.begin();
 
-	cout << "The number of elements untill -99 is: " << count_numbers2(v) << endl;
+	cout << "The number of elements untill -99 is: " << count_numbers(v) << endl;
+
+	int a = 3;
+	int b = a++ + a;
+	cout << (a++ == a);
 }
