@@ -12,8 +12,8 @@ private:
     static constexpr double def_int_rate = 0.0;
     static constexpr double bonus_threshold = 5'000.0;
     static constexpr double bonus_amount = 50.0;
-    
-    static int max_withdrawal;
+    static constexpr int max_withdrawals = 3;
+    static constexpr double max_withdraw_percentage = 0.2;
 protected:
     int withdrawals_left;
 public:

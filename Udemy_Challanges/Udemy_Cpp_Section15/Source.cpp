@@ -47,14 +47,14 @@ int main()
     vector<Trust_Account> tr_accounts;
     tr_accounts.push_back(Trust_Account{});
     tr_accounts.push_back(Trust_Account{ "Ronaldo" });
-    tr_accounts.push_back(Trust_Account{ "Messi", 2000 });
+    tr_accounts.push_back(Trust_Account{ "Messi", 9000 });
     tr_accounts.push_back(Trust_Account{ "Mbappe", 5000, 5.0 });
 
     display(tr_accounts);
     deposit(tr_accounts, 1000);
-    deposit(tr_accounts, 5000);
+    //deposit(tr_accounts, 5000);
     withdraw(tr_accounts, 2000);
-    withdraw(tr_accounts, 1000);
-    withdraw(tr_accounts, 1000);
-    withdraw(tr_accounts, 1000);
+    //withdraw(tr_accounts, 1000);
+    //withdraw(tr_accounts, 1000);
+    //withdraw(tr_accounts, 1000);
 }

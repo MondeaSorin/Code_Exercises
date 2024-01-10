@@ -1,11 +1,9 @@
 #include "Trust_Account.h"
 
-int Trust_Account::max_withdrawal = 3;
-
 Trust_Account::Trust_Account(std::string name, double balance, double int_rate)
 	:Savings_Account(name, balance, int_rate) 
 {
-	this->withdrawals_left = max_withdrawal;
+	this->withdrawals_left = max_withdrawals;
 }
 
 bool Trust_Account::deposit(double amount)
@@ -16,7 +14,7 @@ bool Trust_Account::deposit(double amount)
 
 bool Trust_Account::withdraw(double amount)
 {
-	if (withdrawals_left <= 0) return false;
+	if (withdrawals_left <= 0 || amount > (max_withdraw_percentage * balance)) return false;
 
 	withdrawals_left--;
 	return Account::withdraw(amount);
