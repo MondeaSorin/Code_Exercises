@@ -25,7 +25,9 @@ Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "Udemy_Cpp_Section13", "Udem
 EndProject
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "Udemy_Cpp_Section14", "Udemy_Cpp_Section14\Udemy_Cpp_Section14.vcxproj", "{EA364C96-4F5F-4E68-AAEB-411CAE84AE7F}"
 EndProject
-Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "Udemy_Cpp_Section15", "Udemy_Cpp_Section15\Udemy_Cpp_Section15.vcxproj", "{CF216717-D82C-4897-A2D4-C238108FD891}"
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "Udemy_Cpp_Section15_16", "Udemy_Cpp_Section15\Udemy_Cpp_Section15.vcxproj", "{CF216717-D82C-4897-A2D4-C238108FD891}"
+EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "Udemy_Cpp_Section17", "Udemy_Cpp_Section17\Udemy_Cpp_Section17.vcxproj", "{0ADF802F-A389-4FE4-B2A2-77011B99FB4D}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -131,6 +133,14 @@ Global
 		{CF216717-D82C-4897-A2D4-C238108FD891}.Release|x64.Build.0 = Release|x64
 		{CF216717-D82C-4897-A2D4-C238108FD891}.Release|x86.ActiveCfg = Release|Win32
 		{CF216717-D82C-4897-A2D4-C238108FD891}.Release|x86.Build.0 = Release|Win32
+		{0ADF802F-A389-4FE4-B2A2-77011B99FB4D}.Debug|x64.ActiveCfg = Debug|x64
+		{0ADF802F-A389-4FE4-B2A2-77011B99FB4D}.Debug|x64.Build.0 = Debug|x64
+		{0ADF802F-A389-4FE4-B2A2-77011B99FB4D}.Debug|x86.ActiveCfg = Debug|Win32
+		{0ADF802F-A389-4FE4-B2A2-77011B99FB4D}.Debug|x86.Build.0 = Debug|Win32
+		{0ADF802F-A389-4FE4-B2A2-77011B99FB4D}.Release|x64.ActiveCfg = Release|x64
+		{0ADF802F-A389-4FE4-B2A2-77011B99FB4D}.Release|x64.Build.0 = Release|x64
+		{0ADF802F-A389-4FE4-B2A2-77011B99FB4D}.Release|x86.ActiveCfg = Release|Win32
+		{0ADF802F-A389-4FE4-B2A2-77011B99FB4D}.Release|x86.Build.0 = Release|Win32
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
