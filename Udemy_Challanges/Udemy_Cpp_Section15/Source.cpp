@@ -14,6 +14,15 @@ int main()
     // Accounts
     vector<Account*> accounts;
 
+    try
+    {
+        accounts.push_back(new Savings_Account{ "Hero", -10 });
+    }
+    catch (const IllegalBalanceException& ex)
+    {
+        cerr << ex.what() << endl;
+    }
+
     accounts.push_back(new Savings_Account{});
     accounts.push_back(new Savings_Account{ "Superman" });
     accounts.push_back(new Savings_Account{ "Batman", 2000 });
@@ -27,7 +36,15 @@ int main()
     accounts.push_back(new Trust_Account{ "Ronaldo" });
     accounts.push_back(new Trust_Account{ "Messi", 9000 });
     accounts.push_back(new Trust_Account{ "Mbappe", 5000, 5.0 });
+    
+    try
+    {
+        deposit(accounts, 1000);
+        withdraw(accounts, 2000);
+    }
+    catch (const InsuficientFundsException& ex)
+    {
+        cerr << ex.what() << endl;
+    }
 
-    deposit(accounts, 1000);
-    withdraw(accounts, 2000);
 }

@@ -1,6 +1,8 @@
 #pragma once
 #include <iostream>
 #include "I_Printable.h"
+#include "IllegalBalanceException.h"
+#include "InsuficientFundsException.h"
 
 class Account : public I_Printable
 {

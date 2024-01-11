@@ -12,7 +12,7 @@ bool Checking_Account::withdraw(double amount)
         return true;
     }
     else
-        return false;
+        throw InsuficientFundsException();
 }
 
 bool Checking_Account::deposit(double amount)

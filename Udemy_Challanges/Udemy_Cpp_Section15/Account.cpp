@@ -1,7 +1,12 @@
 #include "Account.h"
 
 Account::Account(std::string name, double balance)
-    : name{ name }, balance{ balance } { }
+    : name{ name }, balance{ 0 } 
+{
+    if (balance < 0) throw IllegalBalanceException{};
+
+    this->balance = balance;
+}
 
 double Account::get_balance() const 
 {

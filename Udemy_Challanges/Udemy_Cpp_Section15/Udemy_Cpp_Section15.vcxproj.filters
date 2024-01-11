@@ -36,6 +36,12 @@
     <ClCompile Include="I_Printable.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="IllegalBalanceException.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="InsuficientFundsException.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <Text Include="Task.txt">
@@ -62,6 +68,12 @@
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="I_Printable.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="IllegalBalanceException.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="InsuficientFundsException.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>

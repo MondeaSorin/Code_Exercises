@@ -1,9 +1,3 @@
 ﻿C:\Program Files\Microsoft Visual Studio\2022\Community\MSBuild\Microsoft\VC\v170\Microsoft.CppBuild.targets(531,5): warning MSB8028: The intermediate directory (x64\Debug\) contains files shared from another project (Udemy_Cpp_Section15.vcxproj).  This can lead to incorrect clean and rebuild behavior.
-  Account_Util.cpp
-  Checking_Account.cpp
-  I_Printable.cpp
-  Savings_Account.cpp
   Source.cpp
-  Trust_Account.cpp
-  Generating Code...
   Udemy_Cpp_Section15.vcxproj -> C:\Users\monde\Desktop\Workspace\C++\Code_Exercises\Udemy_Challanges\x64\Debug\Udemy_Cpp_Section15_16.exe

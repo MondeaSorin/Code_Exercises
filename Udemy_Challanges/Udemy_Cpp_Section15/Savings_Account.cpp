@@ -26,7 +26,7 @@ bool Savings_Account::withdraw(double amount)
         return true;
     }
     else
-        return false;
+        throw InsuficientFundsException();
 }
 
 void Savings_Account::print(std::ostream& os) const
