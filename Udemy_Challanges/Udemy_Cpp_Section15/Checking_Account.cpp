@@ -3,10 +3,27 @@
 Checking_Account::Checking_Account(std::string name, double balance)
     :Account(name, balance) { }
 
-bool Checking_Account::withdraw(double amount) { return Account::withdraw(amount + _TRANSACTION_FEE); }
-
-std::ostream& operator<<(std::ostream& os, const Checking_Account& account)
+bool Checking_Account::withdraw(double amount)
 {
-    os << "[Checking_Account: " << account.name << ": " << account.balance << ", TAX:$" << Checking_Account::_TRANSACTION_FEE << "]";
-    return os;
+    amount += _TRANSACTION_FEE;
+    if (balance - amount >= 0)
+    {
+        balance -= amount;
+        return true;
+    }
+    else
+        return false;
+}
+
+bool Checking_Account::deposit(double amount)
+{
+    if (amount < 0) return false;
+
+    balance += amount;
+    return true;
+}
+
+void Checking_Account::print(std::ostream& out) const
+{
+    out << "[Checking_Account: " << name << ": " << balance << ", TAX:$" << Checking_Account::_TRANSACTION_FEE << "]";
 }

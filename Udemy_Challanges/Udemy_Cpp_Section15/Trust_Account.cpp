@@ -17,11 +17,10 @@ bool Trust_Account::withdraw(double amount)
 	if (withdrawals_left <= 0 || amount > (max_withdraw_percentage * balance)) return false;
 
 	withdrawals_left--;
-	return Account::withdraw(amount);
+	return Savings_Account::withdraw(amount);
 }
 
-std::ostream& operator<<(std::ostream& os, const Trust_Account& account)
+void Trust_Account::print(std::ostream& out) const
 {
-	os << "[Trust_Account: " << account.name << ": " << account.balance << ", " << account.int_rate << "%]";
-	return os;
+	out << "[Trust_Account: " << name << ": " << balance << ", " << int_rate << "%]";
 }

@@ -24,6 +24,7 @@
     <ProjectGuid>{cf216717-d82c-4897-a2d4-c238108fd891}</ProjectGuid>
     <RootNamespace>UdemyCppSection15</RootNamespace>
     <WindowsTargetPlatformVersion>10.0</WindowsTargetPlatformVersion>
+    <ProjectName>Udemy_Cpp_Section15_16</ProjectName>
   </PropertyGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">
@@ -130,17 +131,20 @@
     <ClCompile Include="Account.cpp" />
     <ClCompile Include="Account_Util.cpp" />
     <ClCompile Include="Checking_Account.cpp" />
+    <ClCompile Include="I_Printable.cpp" />
     <ClCompile Include="Savings_Account.cpp" />
     <ClCompile Include="Source.cpp" />
     <ClCompile Include="Trust_Account.cpp" />
   </ItemGroup>
   <ItemGroup>
     <Text Include="Task.txt" />
+    <Text Include="Task2.txt" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Account.h" />
     <ClInclude Include="Account_Util.h" />
     <ClInclude Include="Checking_Account.h" />
+    <ClInclude Include="I_Printable.h" />
     <ClInclude Include="Savings_Account.h" />
     <ClInclude Include="Trust_Account.h" />
   </ItemGroup>

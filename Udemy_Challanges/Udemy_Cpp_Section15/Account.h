@@ -1,7 +1,8 @@
 #pragma once
 #include <iostream>
+#include "I_Printable.h"
 
-class Account
+class Account : public I_Printable
 {
     friend std::ostream& operator<<(std::ostream& os, const Account& account);
 private:
@@ -13,8 +14,10 @@ protected:
 public:
     Account(std::string name = def_name, double balance = def_balance);
     // Account(std::string name = "Unamed Account", double balance = 0.0);
-    bool deposit(double amount);
-    bool withdraw(double amount);
+    virtual bool deposit(double amount) = 0;
+    virtual bool withdraw(double amount) = 0;
     double get_balance() const;
+
+    virtual ~Account() = default;
 };
 

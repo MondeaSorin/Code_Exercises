@@ -12,11 +12,24 @@ Savings_Account::Savings_Account(std::string name, double balance, double int_ra
 bool Savings_Account::deposit(double amount) 
 {
     amount += amount * (int_rate / 100);
-    return Account::deposit(amount);
+    if (amount < 0) return false;
+    
+    balance += amount;
+    return true;
 }
 
-std::ostream& operator<<(std::ostream& os, const Savings_Account& account) 
+bool Savings_Account::withdraw(double amount)
 {
-    os << "[Savings_Account: " << account.name << ": " << account.balance << ", " << account.int_rate << "%]";
-    return os;
+    if (balance - amount >= 0)
+    {
+        balance -= amount;
+        return true;
+    }
+    else
+        return false;
+}
+
+void Savings_Account::print(std::ostream& os) const
+{
+    os << "[Savings_Account: " << name << ": " << balance << ", " << int_rate << "%]";
 }
