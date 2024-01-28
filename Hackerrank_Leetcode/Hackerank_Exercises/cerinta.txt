@@ -1,0 +1,26 @@
+	Avem urmatoarea cerinta: "Alex, eroina din Minecraft, este foarte curajoasa si harnica. De-a lungul timpului, ea a depozitat in n cufere tot felul de obiecte fragile 
+(de exemplu oua) sau dure ( de exemplu pietre). Un cufar este o cutie de lemn cu 27 de compartimente dispuse pe 3 randuri, cate 9 pe fiecare rand. Intr-un compartiment poate fi 
+depozitat uun grup de unul sau mai multe obiecte IDENTICE: maxim 16 obiecte fragile sau maximum 64 de obiecte dure.Pot fi mai multe compartimente care sa contina acelasi tip de obiecte, 
+iar unele compartimente pot fi goale. Alex a etichetat atat compartimentele, cat si obiectele, cu numere construite dupa urmatoarele reguli: 
+	-un obiect are drept eticheta un numar natural 
+cuprins intre 10 si 99, inclusiv, astfel: un numar prin, daca este fragil, sau un numar compus, daca este dur. -toate obiectele identice primesc aceeasi eticheta 
+	-un compartiment are drept 
+eticheta un numar natural format din doua valori alipite: numarul obiecteleor din grupul depozitat inel, urmat de eticheta comuna a acestora(de exemplui daca eticheta compartimentului este 1994,
+inseamna ca in el este depozitat un grup de 19 obiecte, fiecare avand eticheta 94); 
+	-compartimentele goale sunt etichetate cu 0. Alex vrea sa rearanjeze obiectele din cufere, astfel incat: 
+	-sa fie valorificat spatiul, adica sa fie ocupate cat mai putine cufere si, in cadrul unui cufar, cat mai putine compartimente, incepand cu primul rand si, in cadrul unui rand, de la stanga la 
+dreapta. Cu alte cuvinte, sa umple mai intai cufarul 1, incepand cu randul 1, si pe fieacre rand de la stanga la dreapta, apoi cufarul al doilea, in aceeasi maniera, si asa mai departe; 
+	-obiectele sunt preluate in ordinea crescatoare a etichetelor si din totalul obiectelor identice se formeaza  mai intai grupuri cu numar maxim de obiecte, si doar ultimul grup poate fi , 
+eventual, incomplet; 
+	-fiecare din aceste grupuri se depoziteaza, pe masura formarii, in cate un compartiment al cufarului curent, iar daca acesta ese umple, se trece la cufarul urmator. 
+Dupa rearanjarea obiectelor, compartimentele sunt etichetate din nou, dupa aceeasi regula. Cerinte: Dandu-se cele n cufere, care contin obiectele in ordinea initiala, Alex va roaga sa realizati 
+un program care sa determine:
+	1.	pentru fiecare eticheta distincta de obiect intalnit in cele n cufere, numarul total al obiectelor cu acea eticheta
+	2.	noile etichete ale compartimentelor care compun cele n cufere, dupa rearanjarea obiectelor. Date de intrate: Fisierul de intrare cufere.in contine pe prima linie numarul c reprezentand 
+cerinta care trebuie rezolvata(1 sau 2), pe a doua linie numarul natural nenul n, cu semnificatia din enunt, iar pe fiecare din urmatoarele 3n linii, cate 9 numere, reprezentand etichetele 
+initiale ale compartimentelor aflate pe cate un rand al unui cufar, in ordinea in care ele se afla in cufere, de la primul cufar, pana la ultimul, in cadrul fiecarui cufar de la primul rand 
+pana la al treilea, iar in cadrul fiecarui rand de la stanga la dreapta. Numere aflate pe aceeasi linie a fiesierului sunt separate prin cate un spatiu. Date de iesire: Fisierul cufere.out 
+va contine fie raspunsul pentru cerinta 1( daca c = 1), fie raspunsul pentru cerinta 2 (daca c = 2). Pentru cerinta 1, pentru fiecare eticheta distincta, in ordine strict crescatoare, se va 
+afisa o pereche formata din eticheta respectiva si numarul obiectelor cu aceasta eticheta. Fiecare pereche de numere va fi atasata pe cate o linie. Pentru cerinta 2, etichetele compartimentelor
+vor fi afisate corespunzator plasarii lor in cufere, cate 9 pe fiecare linie a fisierului, de la primul cufar pana la ultimul, in cadrul fiecarui cufar de la primul rand pana la al treilea,
+iar in cadrul fiecarui rand de la stanga la dreapta. Numerele aflate pe aceeasi linie a fisierului sunt separate prin cate un spatiu." Limbajul folosit este C++.
