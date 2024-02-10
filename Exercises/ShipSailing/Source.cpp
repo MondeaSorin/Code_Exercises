@@ -1,32 +1,94 @@
 #include <iostream>
 #include <string>
 #include <thread>
+#include <queue>
 #include <chrono>
 
-void clean()
+void clean(std::queue<uint8_t>& cleaning_queue, bool& done, bool& can_execute)
 {
-	std::this_thread::sleep_for(std::chrono::milliseconds(5000));
-	std::cout << "\nThe ship has been cleaned\n";
-}
+	while (!done)
+	{
+		if (!can_execute)
+		{
+			continue;
+		}
+		std::cout << "Checking for cleaning tasks...\n";
+		std::this_thread::sleep_for(std::chrono::milliseconds(1000));
+		std::cout << cleaning_queue.size() << " tasks found\nExecuting tasks";
+		while (!cleaning_queue.empty())
+		{
+			std::cout << "Executing cleaning task... \n";
+			std::this_thread::sleep_for(std::chrono::milliseconds(1000));
+			std::cout << "Cleaning done for cleaning task\n";
+			cleaning_queue.pop();
+		}
 
-void full_speed()
-{
-	std::cout << "Fueling up the engine...\n";
-	std::this_thread::sleep_for(std::chrono::milliseconds(5000));
-	std::cout << "\nThe engine is running at full speed\n\n";
+		if (cleaning_queue.empty())
+		{
+			can_execute = false;
+		}
+	}
 }
 
 void stop_engine()
 {
 	std::cout << "Stopping the engine...\n";
-	std::this_thread::sleep_for(std::chrono::milliseconds(5000));
+	std::this_thread::sleep_for(std::chrono::milliseconds(1000));
 	std::cout << "\nThe engine has been shut down\n\n";
+}
+
+void full_speed(std::queue<uint8_t>& engine_queue, bool& done, bool& can_execute)
+{
+	while (!done)
+	{
+		if (!can_execute)
+		{
+			continue;
+		}
+		std::cout << "Checking for engine tasks...\n";
+		std::this_thread::sleep_for(std::chrono::milliseconds(1000));
+		std::cout << engine_queue.size() << " tasks found\nExecuting tasks";
+
+		while (!engine_queue.empty())
+		{
+			if (engine_queue.front() == 3)
+			{
+				stop_engine();
+			}
+			else
+			{
+				std::cout << "Fueling up the engine...\n";
+				std::this_thread::sleep_for(std::chrono::milliseconds(1000));
+				std::cout << "\nThe engine is running at increased speed\n\n";
+			}
+			engine_queue.pop();
+		}
+		if (engine_queue.empty())
+		{
+			can_execute = false;
+		}
+	}
 }
 
 int main()
 {
+	int allowed_threads = std::thread::hardware_concurrency();
+	
+	//std::cout << "Number of allowed threads on my PC is " << allowed_threads << std::endl;
 	std::cout << "This is the captain speaking. Let's set sail" << std::endl;
 	
+	bool done{ false };
+	bool can_execute_c{ false };
+	bool can_execute_e{ false };
+
+	std::queue<uint8_t> cleaning_queue;
+	std::queue<uint8_t> engine_queue;
+
+	std::thread engine_crew(full_speed, std::ref(engine_queue), std::ref(done), std::ref(can_execute_e));
+	std::thread cleaning_crew(clean, std::ref(cleaning_queue), std::ref(done), std::ref(can_execute_c));
+
+	engine_crew.detach();
+	cleaning_crew.detach();
 
 	std::string selection{};
 	do
@@ -43,26 +105,26 @@ int main()
 
 		if (selection == "1")
 		{
-			std::cout << "The captain can manage other tasks while the ship is being cleaned\n";
-			std::thread cleaning_crew(clean);
-			cleaning_crew.detach();
-			std::cout << "Cleaning the ship...\n\n";
+			cleaning_queue.push(1);
+			std::cout << "Added 1 task to the cleaning queue" << std::endl << std::endl;
+			can_execute_c = true;
 		}
 		else if (selection == "2")
 		{
-			std::cout << "The captain must wait the response of the engine crew before he can issue new orders\n";
-			std::thread engine_crew1(full_speed);
-			engine_crew1.join();
+			engine_queue.push(2);
+			std::cout << "Added 1 speed task to the engine queue" << std::endl << std::endl;
+			can_execute_e = true;
 		}
 		else if (selection == "3")
 		{
-			std::cout << "The captain must wait the response of the engine crew before he can issue new orders\n";
-			std::thread engine_crew2(stop_engine);
-			engine_crew2.join();
+			engine_queue.push(3);
+			std::cout << "Added 1 stop task to the engine queue" << std::endl << std::endl;
+			can_execute_e = true;
 		}
 		else if (selection == "100")
 		{
 			std::cout << "Abandoning the ship..." << std::endl;
+			done = true;
 		}
 		else
 		{
